@@ -1,6 +1,7 @@
 import { useRecipeStore } from './recipeStore';
 import SearchBar from './SearchBar';
 
+<Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
 
