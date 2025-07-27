@@ -1,10 +1,10 @@
 import { useRecipeStore } from './recipeStore';
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
-<Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
-
+  <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
   return (
     <div>
       <SearchBar />
