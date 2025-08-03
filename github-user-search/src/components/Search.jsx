@@ -40,13 +40,15 @@ function Search() {
 
       <div style={{ marginTop: '1rem' }}>
         {loading && <p>Loading...</p>}
-        {error && <p>Looks like we can't find the user.</p>}
-        {user && (
-          <div>
+
+        {!loading && error && <p>Looks like we can't find the user.</p>}
+
+        {!loading && !error && user && (
+          <div style={{ marginTop: '1rem' }}>
             <img src={user.avatar_url} alt={user.login} width="100" />
             <h3>{user.name || user.login}</h3>
             <a href={user.html_url} target="_blank" rel="noreferrer">
-              View Profile
+              View GitHub Profile
             </a>
           </div>
         )}
