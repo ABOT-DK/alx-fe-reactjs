@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { advancedUserSearch } from '../services/githubService';
+import { advancedUserSearch, fetchUserData } from '../services/githubService';
 
 function Search() {
   const [form, setForm] = useState({
