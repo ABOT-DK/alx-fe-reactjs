@@ -41,7 +41,7 @@ function Search() {
       <div style={{ marginTop: '1rem' }}>
         {loading && <p>Loading...</p>}
 
-        {!loading && error && <p>Looks like we can't find the user</p>}
+        {!loading && error && <p>Looks like we cant find the user</p>}
 
         {!loading && !error && user && (
           <div style={{ marginTop: '1rem' }}>
