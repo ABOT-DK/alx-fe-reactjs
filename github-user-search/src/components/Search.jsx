@@ -68,7 +68,7 @@ function Search() {
 
       <div className="mt-6">
         {loading && <p className="text-center">Loading...</p>}
-        {error && <p className="text-center text-red-600">Looks like we can't find the user.</p>}
+        {error && <p className="text-center text-red-600">Looks like we cant find the user</p>}
 
         {users.length > 0 && (
           <ul className="space-y-4">
