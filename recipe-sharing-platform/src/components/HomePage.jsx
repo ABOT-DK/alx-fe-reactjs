@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
+
+
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
@@ -15,6 +17,18 @@ const HomePage = () => {
     <div className="container mx-auto px-4 py-8 grid-cols-1">
       {/* Page Title */}
       <h1 className="text-3xl font-bold text-center mb-8">🍴 Recipe Sharing Platform</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">
+  🍴 Recipe Sharing Platform
+</h1>
+
+<div className="text-center mb-6">
+  <Link
+    to="/add"
+    className="inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
+  >
+    ➕ Add New Recipe
+  </Link>
+</div>
 
       {/* Recipe Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
