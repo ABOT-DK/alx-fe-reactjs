@@ -1,34 +1,39 @@
-import { Routes, Route, Link } from "react-router-dom";
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
 import Profile from "./components/Profile";
-import BlogPost from "./components/BlogPost"; // dynamic route
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
+import BlogPost from "./components/BlogPost";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-export default function App() {
+function App() {
   return (
-    <div className="p-6">
-      <nav className="space-x-4 border-b pb-2 mb-4">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/blog/101">Blog 101</Link>
-        <Link to="/blog/202">Blog 202</Link>
-      </nav>
-
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
 
-        {/* Protected profile route will wrap Profile (Step 3) */}
-        <Route path="/profile/*" element={<Profile />} />
+        {/* Protected Route */}
+        <Route
+          path="/profile/*"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        >
+          {/* Nested Routes inside Profile */}
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="settings" element={<ProfileSettings />} />
+        </Route>
 
-        {/* Dynamic Route */}
+        {/* Dynamic Routing */}
         <Route path="/blog/:id" element={<BlogPost />} />
-        <Route path="/profile/*" element={
-        <ProtectedRoute>
-          <Profile />
-        </ProtectedRoute>
-      }
-    />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
+
+export default App;
